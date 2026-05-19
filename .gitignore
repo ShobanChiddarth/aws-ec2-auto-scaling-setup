@@ -5,6 +5,8 @@
 ### USer Defined ###
 *.env
 !sample.env
+*.pem
+*.key
 
 ### Linux ###
 *~
