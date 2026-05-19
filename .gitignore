@@ -26,6 +26,9 @@
 **/.terraform/*
 *.lock.hcl
 
+# .tfplan files
+*.tfplan
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
