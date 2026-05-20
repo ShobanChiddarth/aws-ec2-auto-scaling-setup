@@ -16,4 +16,8 @@ resource "aws_launch_template" "webserver_launch_template" {
   vpc_security_group_ids = [ aws_security_group.default_webserver_security_group.id ]
   user_data = base64encode(local.webserver_autoscaling_init)
   update_default_version = true
+
+  tags = {
+    "Name" = "webserver-launch-template"
+  }
 }
