@@ -12,7 +12,7 @@ EOF
 resource "aws_instance" "non_autoscaling_ec2" {
   ami = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.singe-ec2-public-subnet.id
+  subnet_id = aws_subnet.singe_ec2_public_subnet.id
   associate_public_ip_address = true
   user_data = local.webserver_init
   vpc_security_group_ids = [aws_security_group.default_webserver_security_group.id]

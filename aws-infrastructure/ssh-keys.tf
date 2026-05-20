@@ -9,6 +9,6 @@ resource "aws_key_pair" "webserver_public_key" {
 
 resource "local_file" "webserver_private_key" {
   filename = "${path.module}/ssh/webserver-management.pem"
-  content = tls_private_key.webserver-management.private_key_openssh
+  content = tls_private_key.webserver_management.private_key_openssh
   file_permission = "0600"
 }
