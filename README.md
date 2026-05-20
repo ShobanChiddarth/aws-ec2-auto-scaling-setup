@@ -63,6 +63,4 @@ To destroy
 - Name: Shoban Chiddarth
 - No. of weeks: 4
 - Project Name: Auto-Scaling EC2 Setup
-
-
 - Project Scope: Cloud Computing
