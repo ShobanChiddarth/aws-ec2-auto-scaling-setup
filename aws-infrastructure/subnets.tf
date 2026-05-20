@@ -33,12 +33,12 @@ resource "aws_subnet" "auto_scaling_subnet_1b" {
   }
 }
 
-resource "aws_route_table_association" "1a_to_nat" {
+resource "aws_route_table_association" "sub1a_to_nat" {
   subnet_id = aws_subnet.auto_scaling_subnet_1a.id
   route_table_id = aws_route_table.private_to_nat_gw.id
 }
 
-resource "aws_route_table_association" "1b_to_nat" {
+resource "aws_route_table_association" "sub1b_to_nat" {
   subnet_id = aws_subnet.auto_scaling_subnet_1b.id
   route_table_id = aws_route_table.private_to_nat_gw.id
 }
