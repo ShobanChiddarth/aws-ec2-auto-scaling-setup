@@ -5,7 +5,7 @@ locals {
   apt-get upgrade -y
   apt-get install nginx -y
   systemctl enable --now nginx
-  echo "<html><body><h1>This is auto scaling server</h1></body></html>" > /var/www/html
+  echo "<html><body><h1>This is auto scaling server</h1></body></html>" > /var/www/html/index.html
 EOF
 }
 
