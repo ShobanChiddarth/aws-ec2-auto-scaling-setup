@@ -42,3 +42,26 @@ resource "aws_route_table_association" "sub1b_to_nat" {
   subnet_id = aws_subnet.auto_scaling_subnet_1b.id
   route_table_id = aws_route_table.private_to_nat_gw.id
 }
+
+
+resource "aws_subnet" "autoscaling_publicsub_1a" {
+  availability_zone = "ap-south-1a"
+  cidr_block = "10.0.3.0/24"
+  vpc_id = aws_vpc.auto_scaling_demo_vpc.id
+}
+
+resource "aws_subnet" "autoscaling_publicsub_1b" {
+  availability_zone = "ap-south-1b"
+  cidr_block = "10.0.4.0/24"
+  vpc_id = aws_vpc.auto_scaling_demo_vpc.id
+}
+
+resource "aws_route_table_association" "publicsub1a_to_igw" {
+  subnet_id = aws_subnet.autoscaling_publicsub_1a.id
+  route_table_id = aws_route_table.auto_scaling_demo_public_rt.id
+}
+
+resource "aws_route_table_association" "publicsub1b_to_igw" {
+  subnet_id = aws_subnet.autoscaling_publicsub_1b.id
+  route_table_id = aws_route_table.auto_scaling_demo_public_rt.id
+}
