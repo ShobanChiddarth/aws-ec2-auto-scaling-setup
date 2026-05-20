@@ -6,7 +6,7 @@ locals {
   apt-get install nginx -y
   systemctl enable --now nginx
   echo "<html><body><h1>This is auto scaling server</h1></body></html>" > /var/www/html
-  EOF
+EOF
 }
 
 resource "aws_launch_template" "webserver_launch_template" {
