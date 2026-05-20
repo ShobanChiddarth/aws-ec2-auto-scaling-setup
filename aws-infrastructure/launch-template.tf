@@ -14,6 +14,6 @@ resource "aws_launch_template" "webserver_launch_template" {
   instance_type = "t3.micro"
   key_name = aws_key_pair.webserver_public_key.key_name
   vpc_security_group_ids = [ aws_security_group.default_webserver_security_group.id ]
-  user_data = local.webserver_autoscaling_init
+  user_data = base64encode(local.webserver_autoscaling_init)
   update_default_version = true
 }
