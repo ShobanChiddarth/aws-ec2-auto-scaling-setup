@@ -1,11 +1,11 @@
 locals {
   webserver_autoscaling_init = <<-EOF
-  #!/bin/bash
-  apt-get update
-  apt-get upgrade -y
-  apt-get install nginx -y
-  systemctl enable --now nginx
-  echo "<html><body><h1>This is auto scaling server</h1></body></html>" > /var/www/html/index.html
+#!/bin/bash
+apt-get update -y
+apt-get upgrade -y
+apt-get install nginx -y
+systemctl enable --now nginx
+echo "<html><body><h1>This is auto scaling server</h1></body></html>" > /var/www/html/index.html
 EOF
 }
 
