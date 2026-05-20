@@ -1,6 +1,6 @@
 # route tables
 
-resource "aws_route_table" "auto-scaling-demo-public-rt" {
+resource "aws_route_table" "auto_scaling_demo_public_rt" {
   vpc_id = aws_vpc.auto_scaling_demo_vpc.id
   
   route {
